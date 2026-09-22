@@ -7,8 +7,10 @@ import pytest
                           (15, 15, [1, 1]),
                           (24, 24, [2, 2]),
                           (28, 28, [3, 2]),
-                          (28, 29, [3, 3]),
-                          (100, 100, [21, 17])])
+                          (14, 14, [0, 0]),
+                          (100, 100, [21, 17]),
+                          (23, 23, [1, 1]),
+                          (27, 27, [2, 2])])
 def test_should_return_correct_human_age(cat_age: int,
                                          dog_age: int,
                                          expected: list) -> None:
