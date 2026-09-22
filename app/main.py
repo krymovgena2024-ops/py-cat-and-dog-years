@@ -34,8 +34,6 @@ def get_human_age_helper(animal_age: int,
     if animal_age == 24:
         animal_human_age = 2
     if animal_age > 24:
-        animal_human_age = 1
-        for year in range(24, animal_age + 1,
-                          number_of_years_per_additional_human_year):
-            animal_human_age += 1
+        animal_human_age = (2 + (animal_age - 24)
+                            // number_of_years_per_additional_human_year)
     return animal_human_age
