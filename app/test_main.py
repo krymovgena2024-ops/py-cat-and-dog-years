@@ -15,3 +15,9 @@ def test_should_return_correct_human_age(cat_age: int,
                                          dog_age: int,
                                          expected: list) -> None:
     assert get_human_age(cat_age, dog_age) == expected
+
+def test_should_raise_correct_exception():
+    with pytest.raises(TypeError):
+        get_human_age("2", True)
+    with pytest.raises(ValueError):
+        get_human_age(-20, -30)

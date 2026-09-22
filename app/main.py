@@ -18,8 +18,8 @@ def get_human_age(cat_age: int, dog_age: int) -> list:
         get_human_age(15, 15) == [1, 1]
         get_human_age(24, 24) == [2, 2]
     """
-    # TODO: Implement this function
-    # Write your tests first, then implement the logic
+    if cat_age < 0 or dog_age < 0:
+        raise ValueError("All arguments should be positive numbers")
     cat_human_age = 0
     dog_human_age = 0
     if 24 > cat_age >= 15:
