@@ -20,22 +20,22 @@ def get_human_age(cat_age: int, dog_age: int) -> list:
     """
     if cat_age < 0 or dog_age < 0:
         raise ValueError("All arguments should be positive numbers")
-    cat_human_age = 0
-    dog_human_age = 0
-    if 24 > cat_age >= 15:
-        cat_human_age = 1
-    if cat_age == 24:
-        cat_human_age = 2
-    if cat_age > 24:
-        cat_human_age = 1
-        for year in range(24, cat_age + 1, 4):
-            cat_human_age += 1
-    if 24 > dog_age >= 15:
-        dog_human_age = 1
-    if dog_age == 24:
-        dog_human_age = 2
-    if dog_age > 24:
-        dog_human_age = 1
-        for year in range(24, dog_age + 1, 5):
-            dog_human_age += 1
+    cat_human_age = get_human_age_helper(cat_age, 4)
+    dog_human_age = get_human_age_helper(dog_age, 5)
     return [cat_human_age, dog_human_age]
+
+
+def get_human_age_helper(animal_age: int,
+                         number_of_years_per_additional_human_year: int
+                         ) -> int:
+    animal_human_age = 0
+    if 24 > animal_age >= 15:
+        animal_human_age = 1
+    if animal_age == 24:
+        animal_human_age = 2
+    if animal_age > 24:
+        animal_human_age = 1
+        for year in range(24, animal_age + 1,
+                          number_of_years_per_additional_human_year):
+            animal_human_age += 1
+    return animal_human_age
